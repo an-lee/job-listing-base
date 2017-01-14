@@ -14,3 +14,9 @@ Step 1: Jobs CRUD
 - job CRUD
 - jobs/index
 - jobs/1/show
+
+Step 2: admin panel
+
+- admin/jobs CRUD
+- is_hidden
+- font-awesome-rails
