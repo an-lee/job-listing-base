@@ -20,3 +20,8 @@ Step 2: admin panel
 - admin/jobs CRUD
 - is_hidden
 - font-awesome-rails
+
+Step 3: jobs order & uploader
+
+- order the jobs by 3 params
+- uploader
