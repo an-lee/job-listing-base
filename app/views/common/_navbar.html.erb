@@ -6,7 +6,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">EA OFFER</a>
+      <%= link_to("EA OFFER", root_path, class: "navbar-brand") %>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
@@ -16,14 +16,24 @@
             <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
-            <li><a href="#">ARCHITECTS</a></li>
-            <li><a href="#">STRUCTURAL ENGINEER</a></li>
-            <li><a href="#">DRAINAGE ENGINEER</a></li>
-            <li><a href="#">HVAC ENGINEER</a></li>
-            <li><a href="#">ELECTRICAL ENGINEER</a></li>
+            <li>
+              <%= link_to("ARCHITECTS", jobs_path) %>
+            </li>
+            <li>
+              <%= link_to("STRUCTURAL ENGINEER", jobs_path) %>
+            </li>
+            <li>
+              <%= link_to("DRAINAGE ENGINEER", jobs_path) %>
+            </li>
+            <li>
+              <%= link_to("HVAC ENGINEER", jobs_path) %>
+            </li>
+            <li>
+              <%= link_to("ELECTRICAL ENGINEER", jobs_path) %>
+            </li>
           </ul>
         </li>
-        <li><a href="#tour">ABOUT</a></li>
+        <li><a href="#about">ABOUT</a></li>
         <li><a href="#contact">CONTACT</a></li>
         <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
         <% if !current_user %>
