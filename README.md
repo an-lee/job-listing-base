@@ -25,3 +25,7 @@ Step 3: jobs order & uploader
 
 - order the jobs by 3 params
 - uploader
+
+bs-theme: add bootstrap theme to welcome index
+
+- bootstrap theme '[The Band](http://www.w3schools.com/bootstrap/bootstrap_theme_band.asp)'
