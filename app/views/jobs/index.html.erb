@@ -2,70 +2,154 @@
 
   <h3 class="text-center">Pick a Job</h3>
   <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#home">Architect</a></li>
-    <li><a data-toggle="tab" href="#menu1">Structural Engineer</a></li>
-    <li><a data-toggle="tab" href="#menu2">Civil Engineer</a></li>
+    <li class="active"><a data-toggle="tab" href="#home">ALL</a></li>
+    <li><a data-toggle="tab" href="#menu1">Architect</a></li>
+    <li><a data-toggle="tab" href="#menu2">Structural Engineer</a></li>
+    <li><a data-toggle="tab" href="#menu3">Civil Engineer</a></li>
   </ul>
 
   <div class="tab-content">
     <div id="home" class="tab-pane fade in active">
       <br>
-      <div class="dropdown clearfix pull-right">
+      <div class="row dropdown clearfix pull-right">
           <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            order
+            Reorder
               <span class="caret"></span>
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
               <li>
-                <%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound")) %>
+                <%= link_to("by lower bound of salary", jobs_path(:order => "by_lower_bound")) %>
               </li>
               <li>
-                  <%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %>
+                  <%= link_to("by upper bound of salary", jobs_path(:order => "by_upper_bound")) %>
 
               </li>
               <li>
-                <%= link_to("按照发表时间排序", jobs_path ) %>
+                <%= link_to("by publish time", jobs_path ) %>
 
               </li>
           </ul>
       </div>
-      <table class="table table-boldered">
-        <thead>
-          <tr>
-            <td>职位</td>
-            <td>薪资下限</td>
-            <td>薪资上限</td>
-            <td>发布时间</td>
-          </tr>
-        </thead>
-        <tbody>
-          <% @jobs.each do |job| %>
-          <tr>
-            <td>
-              <%= link_to(job.title, job_path(job)) %>
-            </td>
-            <td>
-              <%= job.wage_lower_bound %>
-            </td>
-            <td>
-              <%= job.wage_upper_bound %>
-            </td>
-            <td>
-              <%= job.created_at %>
-            </td>
-          </tr>
-          <% end %>
-        </tbody>
-
-      </table>
+      <br>
+      <br>
+      <br>
+      <% @jobs.each do |job| %>
+      <div class="row">
+        <div class="col-sm-4">
+          <%= link_to(job.title, job_path(job)) %>
+        </div>
+        <div class="col-md-4">
+          <i class="fa fa-location-arrow" aria-hidden="true"></i>
+          <%= job.address %>
+        </div>
+        <div class="col-sm-4">
+          <i class="fa fa-money" aria-hidden="true"></i>
+          ¥<%= job.wage_lower_bound %> ~ <%= job.wage_upper_bound %>
+        </div>
+        <div class="col-sm-4">
+          <%= job.category %>
+        </div>
+        <div class="col-md-4">
+          <i class="fa fa-envelope" aria-hidden="true"></i>
+          <%= job.contact_email %>
+        </div>
+        <div class="col-md-4">
+          <i class="fa fa-clock-o" aria-hidden="true"></i>
+          <%= job.created_at %>
+        </div>
+      </div>
+      <hr>
+      <% end %>
     </div>
     <div id="menu1" class="tab-pane fade">
-      <h2>Chandler Bing, Guitarist</h2>
-      <p>Always a pleasure people! Hope you enjoyed it as much as I did. Could I BE.. any more pleased?</p>
+      <br>
+      <% @jobs_a.each do |job| %>
+      <div class="row">
+        <div class="col-sm-4">
+          <%= link_to(job.title, job_path(job)) %>
+        </div>
+        <div class="col-md-4">
+          <i class="fa fa-location-arrow" aria-hidden="true"></i>
+          <%= job.address %>
+        </div>
+        <div class="col-sm-4">
+          <i class="fa fa-money" aria-hidden="true"></i>
+          ¥<%= job.wage_lower_bound %> ~ <%= job.wage_upper_bound %>
+        </div>
+        <div class="col-sm-4">
+          <%= job.category %>
+        </div>
+        <div class="col-md-4">
+          <i class="fa fa-envelope" aria-hidden="true"></i>
+          <%= job.contact_email %>
+        </div>
+        <div class="col-md-4">
+          <i class="fa fa-clock-o" aria-hidden="true"></i>
+          <%= job.created_at %>
+        </div>
+      </div>
+      <hr>
+      <% end %>
     </div>
     <div id="menu2" class="tab-pane fade">
-      <h2>Peter Griffin, Bass player</h2>
-      <p>I mean, sometimes I enjoy the show, but other times I enjoy other things.</p>
+      <br>
+      <% @jobs_s.each do |job| %>
+      <div class="row">
+        <div class="col-sm-4">
+          <%= link_to(job.title, job_path(job)) %>
+        </div>
+        <div class="col-md-4">
+          <i class="fa fa-location-arrow" aria-hidden="true"></i>
+          <%= job.address %>
+        </div>
+        <div class="col-sm-4">
+          <i class="fa fa-money" aria-hidden="true"></i>
+          ¥<%= job.wage_lower_bound %> ~ <%= job.wage_upper_bound %>
+        </div>
+        <div class="col-sm-4">
+          <%= job.category %>
+        </div>
+        <div class="col-md-4">
+          <i class="fa fa-envelope" aria-hidden="true"></i>
+          <%= job.contact_email %>
+        </div>
+        <div class="col-md-4">
+          <i class="fa fa-clock-o" aria-hidden="true"></i>
+          <%= job.created_at %>
+        </div>
+      </div>
+      <hr>
+      <% end %>
+    </div>
+    <div id="menu3" class="tab-pane fade">
+      <br>
+      <% @jobs_c.each do |job| %>
+      <div class="row">
+        <div class="col-sm-4">
+          <%= link_to(job.title, job_path(job)) %>
+        </div>
+        <div class="col-md-4">
+          <i class="fa fa-location-arrow" aria-hidden="true"></i>
+          <%= job.address %>
+        </div>
+        <div class="col-sm-4">
+          <i class="fa fa-money" aria-hidden="true"></i>
+          ¥<%= job.wage_lower_bound %> ~ <%= job.wage_upper_bound %>
+        </div>
+        <div class="col-sm-4">
+          <%= job.category %>
+        </div>
+        <div class="col-md-4">
+          <i class="fa fa-envelope" aria-hidden="true"></i>
+          <%= job.contact_email %>
+        </div>
+        <div class="col-md-4">
+          <i class="fa fa-clock-o" aria-hidden="true"></i>
+          <%= job.created_at %>
+        </div>
+      </div>
+      <hr>
+      <% end %>
     </div>
   </div>
 </div>

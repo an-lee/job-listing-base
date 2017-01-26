@@ -1,12 +1,45 @@
+
 <div class="container">
-  <h1> <%= @job.title %> </h1>
-
-  <p>
-    <%= simple_format(@job.description) %>
-
-  </p>
-
-  <div class="text-center">
-    <%= link_to("投交履历", new_job_resume_path(@job), :style => "font-size: 30px; text-decoration:none;") %>
-  </div>
+  <div class="row">
+      <div class="col-md-12">
+          <div class="box">
+              <div class="box-content">
+                  <h1 class="tag-title"><%= @job.title %></h1>
+                  <hr>
+                  <div class="row col-md-12">
+                    <%= @job.category %>
+                  </div>
+                  <div class="row col-md-12">
+                    <i class="fa fa-money" aria-hidden="true"></i> ¥<%= @job.wage_lower_bound %> ~ <%= @job.wage_upper_bound %>
+                  </div>
+                  <div class="row col-md-12">
+                    <i class="fa fa-location-arrow" aria-hidden="true"></i> <%= @job.address %>
+                  </div>
+                  <div class="row col-md-12">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                     <%= @job.contact_email %>
+                  </div>
+                  <div class="row col-md-12">
+                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                     <%= @job.created_at %>
+                  </div>
+                  <div class="row col-md-12">
+                    <p>
+                      <%= simple_format(@job.description) %>
+                    </p>
+                  </div>
+                  <br />
+                  <br>
+                  <br>
+                  <div class="row text-center">
+                    <%= link_to("Apply", new_job_resume_path(@job), class: "btn btn-default pull-center") %>
+                  </div>
+                  <div class="row text-right">
+                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                    <%= link_to("Back", jobs_path, style: "none") %>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
 </div>

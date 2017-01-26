@@ -9,6 +9,9 @@ class JobsController < ApplicationController
             else
               Job.published.recent
             end
+    @jobs_a = Job.where(:category => 'ARCHITECTS')
+    @jobs_s = Job.where(:category => 'STRUCTURAL ENGINEER')
+    @jobs_c = Job.where(:category => 'CIVIL ENGINEER')
   end
 
   def show

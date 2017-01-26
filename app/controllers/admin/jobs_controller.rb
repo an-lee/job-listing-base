@@ -10,6 +10,9 @@ class Admin::JobsController < ApplicationController
 
   def index
     @jobs = Job.all
+    @jobs_a = Job.where(:category => 'ARCHITECTS')
+    @jobs_s = Job.where(:category => 'STRUCTURAL ENGINEER')
+    @jobs_c = Job.where(:category => 'CIVIL ENGINEER')
   end
 
   def new
@@ -64,6 +67,6 @@ class Admin::JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:title, :description, :wage_lower_bound, :wage_upper_bound, :contact_email, :is_hidden)
+    params.require(:job).permit(:title, :description, :wage_lower_bound, :wage_upper_bound, :contact_email, :is_hidden, :address, :category)
   end
 end

@@ -1,14 +1,20 @@
-<h1> 发布新职位 </h1>
 
-<br>
+<div class="container">
+<h1> Publish a new job </h1>
 <%= simple_form_for [:admin,@job] do |f| %>
 
-<%= f.input :title, :label => "职位名称" %>
-<%= f.input :description, :label => "职位描述" %>
-<%= f.input :wage_lower_bound, :label => "薪资下限" %>
-<%= f.input :wage_upper_bound, :label => "薪资上限" %>
-<%= f.input :contact_email, :label => "联系方式" %>
-<%= f.input :is_hidden, :label => "是否隐藏" %>
+<%= f.input :title, :label => "Name" %>
+<%= f.input :category, :label => "category" %>
+<%= f.input :description, :label => "Discreption" %>
+<%= f.input :address, :label => "City" %>
+<%= f.input :wage_lower_bound, :label => "wage lower bound" %>
+<%= f.input :wage_upper_bound, :label => "wage upper bound" %>
+<%= f.input :contact_email, :label => "contact" %>
+<%= f.input :is_hidden, :label => "hidden or not" %>
 
-  <%= f.submit "发布新职位" %>
+
+  <%= f.submit "Pulish a new job", :class => "btn btn-default btn-sm" %>
 <% end %>
+
+
+</div>
