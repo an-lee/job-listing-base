@@ -1,9 +1,11 @@
-<h3> Upload Resume to <%= @job.title %></h3>
+<div class="container">
+  <h3> Upload Resume to <%= @job.title %></h3>
 
-<hr>
+  <hr>
 
-<%= simple_form_for [@job, @resume] do |f| %>
-  <%= f.input :content %>
-  <%= f.input :attachment %>
-  <%= f.submit "Send out" %>
-<% end %>
+  <%= simple_form_for [@job, @resume] do |f| %>
+    <%= f.input :content %>
+    <%= f.input :attachment %>
+    <%= f.submit "Send out" %>
+  <% end %>
+</div>

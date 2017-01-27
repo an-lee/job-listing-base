@@ -33,3 +33,4 @@ bs-theme: add bootstrap theme to welcome index
 decorate: decorate the pages
  - Jobs #index
  - Job #show
+ - add city/category to jobs
